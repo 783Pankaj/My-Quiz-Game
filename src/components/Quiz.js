@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { QuizData } from '../data/QuizData';
 import QuizResult from "./QuizResult";
+import LayoutPage from './LayoutPage';
 
 function Quiz() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -11,6 +12,7 @@ function Quiz() {
     const [minutes, setMinutes] = useState(2);
     const [timeLeft, setTimeLeft] = useState(10);
     const [timerId, setTimerId] = useState(null);
+
 //------------------------------totale time
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -96,6 +98,7 @@ function Quiz() {
     console.log(score)
     return (
         <div>
+            <LayoutPage />
             <p className="heading-txt">Quiz APP</p>
             <h1 className='totalTime'> Totale Timer :{minutes < 10 ? "0" + minutes : minutes}:{second < 10 ? "0" + second : second}
             </h1>
